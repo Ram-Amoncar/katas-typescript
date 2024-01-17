@@ -1,5 +1,5 @@
 function sortStringList(arr: string[]): string[] {
-  return arr.toSorted()
+    return arr.toSorted()
 }
 
 export { sortStringList }

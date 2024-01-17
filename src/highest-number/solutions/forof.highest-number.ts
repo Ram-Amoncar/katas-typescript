@@ -1,11 +1,11 @@
 export function getHighestNumber(numbers: number[]) {
-  let highestNumber = numbers[0]
+    let highestNumber = numbers[0]
 
-  for (const number of numbers) {
-    if (number > highestNumber) {
-      highestNumber = number
+    for (const number of numbers) {
+        if (number > highestNumber) {
+            highestNumber = number
+        }
     }
-  }
 
-  return highestNumber
+    return highestNumber
 }

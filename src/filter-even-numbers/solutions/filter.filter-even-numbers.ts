@@ -1,3 +1,3 @@
 export function getEvenNumbers(numbers: number[]): number[] {
-  return numbers.filter(x => x % 2 === 0)
+    return numbers.filter(x => x % 2 === 0)
 }

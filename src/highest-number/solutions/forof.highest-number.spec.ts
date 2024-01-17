@@ -2,27 +2,27 @@ import { describe, it, expect } from 'vitest'
 import { getHighestNumber } from './forof.highest-number'
 
 describe('getHighestNumber', () => {
-  it('should get the only element in the list if there is only one element', () => {
-    const given = [100]
+    it('should get the only element in the list if there is only one element', () => {
+        const given = [100]
 
-    const actual = getHighestNumber(given)
+        const actual = getHighestNumber(given)
 
-    expect(actual).toBe(100)
-  })
+        expect(actual).toBe(100)
+    })
 
-  it('should get the highest numbers amongst several numbers', () => {
-    const given = [1, 2, 3]
+    it('should get the highest numbers amongst several numbers', () => {
+        const given = [1, 2, 3]
 
-    const actual = getHighestNumber(given)
+        const actual = getHighestNumber(given)
 
-    expect(actual).toBe(3)
-  })
+        expect(actual).toBe(3)
+    })
 
-  it('should get the highest numbers amongst several negative numbers', () => {
-    const given = [-1, -2, -3]
+    it('should get the highest numbers amongst several negative numbers', () => {
+        const given = [-1, -2, -3]
 
-    const actual = getHighestNumber(given)
+        const actual = getHighestNumber(given)
 
-    expect(actual).toBe(-1)
-  })
+        expect(actual).toBe(-1)
+    })
 })

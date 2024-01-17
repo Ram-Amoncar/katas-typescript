@@ -1,9 +1,9 @@
 export function getPoweredByTwo(numbers: number[]): number[] {
-  const powered = []
+    const powered = []
 
-  for (const number of numbers) {
-    powered.push(number ** 2)
-  }
+    for (const number of numbers) {
+        powered.push(number ** 2)
+    }
 
-  return powered
+    return powered
 }

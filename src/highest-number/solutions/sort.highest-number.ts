@@ -1,6 +1,6 @@
 export function getHighestNumber(numbers: number[]): number {
-  return numbers
-    .slice()
-    .sort((a, b) => a - b)
-    .reverse()[0]
+    return numbers
+        .slice()
+        .sort((a, b) => a - b)
+        .reverse()[0]
 }

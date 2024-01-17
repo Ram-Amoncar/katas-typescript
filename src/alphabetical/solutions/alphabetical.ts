@@ -1,3 +1,3 @@
 export function getAlphabeticallySorted(given: string[]) {
-  return given.sort((a, b) => a.localeCompare(b))
+    return given.sort((a, b) => a.localeCompare(b))
 }

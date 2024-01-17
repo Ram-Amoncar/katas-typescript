@@ -2,25 +2,25 @@ import { describe, it, expect } from 'vitest'
 import { forEach } from './forof.for-each'
 
 describe('forEach', () => {
-  it('should execute a callback for each iteration of a given array', () => {
-    const given = [1, 2, 3]
-    let total = 0
+    it('should execute a callback for each iteration of a given array', () => {
+        const given = [1, 2, 3]
+        let total = 0
 
-    forEach(given, () => {
-      total++
+        forEach(given, () => {
+            total++
+        })
+
+        expect(total).toBe(3)
     })
 
-    expect(total).toBe(3)
-  })
+    it('should access the element it is iterating over', () => {
+        const given = [1, 2, 3]
+        const actual: number[] = []
 
-  it('should access the element it is iterating over', () => {
-    const given = [1, 2, 3]
-    const actual: number[] = []
+        forEach(given, element => {
+            actual.push(element)
+        })
 
-    forEach(given, element => {
-      actual.push(element)
+        expect(actual).toEqual([1, 2, 3])
     })
-
-    expect(actual).toEqual([1, 2, 3])
-  })
 })
