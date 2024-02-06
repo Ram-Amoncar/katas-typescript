@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calculateString } from './calculator'
+import { calculateString } from './space.calculator'
 
 describe('Calculator', () => {
     it('should add two numbers', () => {
