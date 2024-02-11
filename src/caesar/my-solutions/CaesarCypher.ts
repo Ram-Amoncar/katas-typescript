@@ -1,27 +1,37 @@
 export class CaesarCypher {
-    private LETTER_SET = 'abcdefghijklmnopqrstuvwxyz'
+    private LETTER_ARRAY = 'abcdefghijklmnopqrstuvwxyz'.split('')
     encrypt(text: string, offset: number = 1): string {
-        const larr = this.LETTER_SET.split('')
-        text = text.toLowerCase().trim()
-        return text.split('').reduce((prev: string, curVal: string): string => {
-            let li = larr.findIndex((v: string) => v === curVal)
-            if (li === -1) return prev + ' '
-            else {
-                let val = prev + larr[this.calOffset(li + offset)]
+        return text
+            .toLowerCase()
+            .trim()
+            .split('')
+            .reduce((prev: string, curVal: string): string => {
+                const LETTER_INDEX = this.LETTER_ARRAY.findIndex((v: string) => v === curVal)
+                if (LETTER_INDEX === -1) return prev + ' '
+                const VALUE = prev + this.LETTER_ARRAY[this.calOffset(LETTER_INDEX + offset)]
                 offset++
-                return val
-            }
-        }, '')
+                return VALUE
+            }, '')
     }
 
-    // decrypt(cypher: string, offset: number): string {}
+    decrypt(cypher: string, offset: number): string {
+        return cypher
+            .toLowerCase()
+            .trim()
+            .split('')
+            .reduce((prev: string, curVal: string): string => {
+                const LETTER_INDEX = this.LETTER_ARRAY.findIndex((v: string) => v === curVal)
+                if (LETTER_INDEX === -1) return prev + ' '
+                const VALUE = prev + this.LETTER_ARRAY[this.calOffset(LETTER_INDEX - offset)]
+                offset++
+                return VALUE
+            }, '')
+    }
 
-    calOffset(ofset: number): number {
-        if (ofset > this.LETTER_SET.length - 1) {
-            while (ofset > this.LETTER_SET.length - 1) {
-                ofset = ofset - this.LETTER_SET.length
-            }
-        }
-        return ofset
+    calOffset(offset: number): number {
+        if (offset > this.LETTER_ARRAY.length - 1)
+            return this.calOffset(offset - this.LETTER_ARRAY.length)
+        if (offset < 0) return this.calOffset(this.LETTER_ARRAY.length - Math.abs(offset))
+        return offset
     }
 }
